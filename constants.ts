@@ -2,7 +2,7 @@ import { CVData } from './types';
 
 /**
  * GITHUB READY CONFIGURATION
- * Using raw.githubusercontent.com links for all user-provided assets.
+ * Using raw.githubusercontent.com links for all user-provided assets from the cvp repository.
  * This ensures the highest reliability for your online portfolio.
  */
 export const INITIAL_CV_DATA: CVData = {
@@ -13,7 +13,7 @@ export const INITIAL_CV_DATA: CVData = {
   phone: "+33 6 15 09 29 19",
   location: "Remote",
   website: "linkedin.com/in/victor-lafforgue/",
-  profileImage: "https://raw.githubusercontent.com/Victor777777/cv/5cb6ee8165c474e6a21011b4fb4053a020bfc4b3/1704690424956.jpeg",
+  profileImage: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/1704690424956.jpeg",
   experiences: [
     {
       id: "1",
@@ -22,7 +22,7 @@ export const INITIAL_CV_DATA: CVData = {
       location: "Remote",
       duration: "July 2025 - December 2025 • 6 months",
       description: "AI & Web3 infrastructure project focused on computer-use agents and data collection",
-      logo: "https://raw.githubusercontent.com/Victor777777/cv/main/1758019329968.jpeg",
+      logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/1758019329968.jpeg",
       responsibilities: [
         "**STRATEGY**: Led **go-to-market, growth strategy, and market positioning** for AI + Web3 infrastructure from early conception to public launch",
         "**MARKETING**: Defined and executed **marketing, narrative, and ecosystem strategy** across product, community, and token launch phases",
@@ -58,7 +58,7 @@ export const INITIAL_CV_DATA: CVData = {
       location: "Remote",
       duration: "April 2018 - February 2024 • 5 years 11 months",
       description: "Layer-1 blockchain infrastructure focused on scalability, security & energy efficiency",
-      logo: "https://raw.githubusercontent.com/Victor777777/cv/main/archethic_technologies_logo.jpeg",
+      logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/archethic_technologies_logo.jpeg",
       responsibilities: [
         "**FUNDRAISING**: Raised over **$3M** through strategic investor relations and comprehensive pitch execution with cash flow projections",
         "**PARTNERSHIPS**: Identified and secured **15+ key partnerships** driving ecosystem growth and market adoption",
@@ -72,7 +72,7 @@ export const INITIAL_CV_DATA: CVData = {
         "**CONTENT**: Created comprehensive content for Medium & blog, reaching **10k+ subscribers**",
         "**MARKETING**: Built **data-driven strategies** leveraging market narratives to achieve **clear ROI tracking**",
         "**ANALYTICS**: Set up & analyzed KPIs using tools like **Databox APIs** for data-driven decision making",
-        "**COMPLIANCE**: Ensured full compliance with local and international regulations across multiple jurisdictions",
+        "**COMPLIANCE**: Enusred full compliance with local and international regulations across multiple jurisdictions",
         "**WEB**: Designed content & design of company website through two major iterations",
         "**KOL**: Budgeted, managed & measured Key Opinion Leaders campaigns with clear ROI tracking",
         "**PRODUCT**: Created and maintained comprehensive company product roadmap aligned with market demands",
@@ -86,7 +86,7 @@ export const INITIAL_CV_DATA: CVData = {
       location: "Remote",
       duration: "April 2018 - Present • 6+ years",
       description: "Specialized deal-flow and investment analysis for top-tier Web3 ventures",
-      logo: "https://raw.githubusercontent.com/Victor777777/cv/80c417c811fd61b5c65af120eaa43e461ac9ff66/pg.jpeg", 
+      logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/pg.jpeg", 
       responsibilities: [
         "**ANALYSIS**: Provided comprehensive **market analysis and deal selection** for **Web3 investment opportunities**",
         "**NETWORK**: Maintained strategic connections with key **institutional investors** and ecosystem partners",
@@ -108,14 +108,14 @@ export const INITIAL_CV_DATA: CVData = {
       degree: "Technicien PNL, Communication Science",
       institution: "IFPNL",
       year: "2018",
-      logo: "https://raw.githubusercontent.com/Victor777777/cv/main/ifpnl_logo.jpeg"
+      logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/ifpnl_logo.jpeg"
     },
     {
       id: "e5",
       degree: "Bachelor's degree",
       institution: "EHL",
       year: "2014 - 2018",
-      logo: "https://raw.githubusercontent.com/Victor777777/cv/main/ehl_logo.jpeg"
+      logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/ehl_logo.jpeg"
     }
   ],
   skills: [
