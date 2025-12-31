@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { CVData } from './types';
 import { INITIAL_CV_DATA } from './constants';
 
@@ -13,7 +14,7 @@ const formatText = (text: string) => {
   });
 };
 
-const CompanyLogo: React.FC<{ src?: string; name: string; onClick: () => void; id: string }> = ({ src, name, onClick, id }) => {
+const CompanyLogo: React.FC<{ src?: string; name: string }> = ({ src, name }) => {
   const [error, setError] = useState(false);
   const nameLower = name.toLowerCase();
   const isPadded = nameLower.includes('n8n') || nameLower.includes('massachusetts');
@@ -25,74 +26,24 @@ const CompanyLogo: React.FC<{ src?: string; name: string; onClick: () => void; i
   else imgClass = "w-full h-full object-contain p-1";
 
   return (
-    <div onClick={onClick} className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white flex items-center justify-center border border-black/[0.05] shrink-0 shadow-sm transition-all hover:scale-105 cursor-pointer relative overflow-hidden group">
+    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white flex items-center justify-center border border-black/[0.05] shrink-0 shadow-sm transition-all relative overflow-hidden">
       {!error && src ? (
         <img src={src} alt={name} className={imgClass} onError={() => setError(true)} />
       ) : (
         <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400 font-black text-xl">{name.charAt(0)}</div>
       )}
-      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center no-print">
-        <i className="fas fa-upload text-[10px] text-white"></i>
-      </div>
     </div>
   );
 };
 
 const App: React.FC = () => {
-  const [data, setData] = useState<CVData>(() => {
-    const saved = localStorage.getItem('cv_data_v1');
-    return saved ? JSON.parse(saved) : INITIAL_CV_DATA;
-  });
-
+  // Always use initial data from constants.ts for a fixed portfolio
+  const [data] = useState<CVData>(INITIAL_CV_DATA);
   const [mounted, setMounted] = useState(false);
-  const [profileImage, setProfileImage] = useState<string | null>(() => localStorage.getItem('profile_image_v1') || INITIAL_CV_DATA.profileImage || null);
-  const [persistedLogos, setPersistedLogos] = useState<Record<string, string>>(() => JSON.parse(localStorage.getItem('persisted_logos_v1') || '{}'));
-
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const logoInputRef = useRef<HTMLInputElement>(null);
-  const activeLogoId = useRef<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('cv_data_v1', JSON.stringify(data));
-  }, [data]);
-
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64 = reader.result as string;
-        setProfileImage(base64);
-        localStorage.setItem('profile_image_v1', base64);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    const id = activeLogoId.current;
-    if (file && id) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64 = reader.result as string;
-        const newLogos = { ...persistedLogos, [id]: base64 };
-        setPersistedLogos(newLogos);
-        localStorage.setItem('persisted_logos_v1', JSON.stringify(newLogos));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const triggerProfileUpload = () => fileInputRef.current?.click();
-  const triggerLogoUpload = (id: string) => {
-    activeLogoId.current = id;
-    logoInputRef.current?.click();
-  };
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -107,9 +58,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen text-slate-900 font-['Inter'] selection:bg-black/10 relative overflow-x-hidden">
-      <input type="file" ref={fileInputRef} onChange={handleImageUpload} accept="image/*" className="hidden" />
-      <input type="file" ref={logoInputRef} onChange={handleLogoUpload} accept="image/*" className="hidden" />
-
       {/* Background Decor */}
       <div className="fixed inset-0 z-0 no-print bg-white">
         <div className="absolute top-[-10%] left-[-20%] w-[100vw] h-[100vw] rounded-full bg-[radial-gradient(circle,rgba(240,240,240,0.8)_0%,rgba(255,255,255,0)_70%)] blur-[120px]"></div>
@@ -147,9 +95,14 @@ const App: React.FC = () => {
               </div>
 
               <div className="shrink-0 relative order-1 md:order-2">
-                <div onClick={triggerProfileUpload} className="w-28 h-28 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border-2 md:border-3 border-slate-300 shadow-xl transition-all duration-500 hover:scale-[1.02] cursor-pointer bg-slate-100 flex items-center justify-center relative group/img">
-                  {profileImage ? <img src={profileImage} alt={data.name} className="w-full h-full object-cover" /> : <div className="text-center p-4"><i className="fas fa-camera text-slate-300 text-xl mb-1"></i><p className="text-[6px] font-black uppercase tracking-widest text-slate-400">Photo</p></div>}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center"><span className="text-white text-[8px] font-black uppercase tracking-widest">Update</span></div>
+                <div className="w-28 h-28 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border-2 md:border-3 border-slate-300 shadow-xl bg-slate-100 flex items-center justify-center relative">
+                  {data.profileImage ? (
+                    <img src={data.profileImage} alt={data.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="text-center p-4">
+                      <i className="fas fa-user text-slate-300 text-3xl"></i>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -163,7 +116,7 @@ const App: React.FC = () => {
                   <div key={exp.id} className="group transition-all duration-300 md:hover:bg-slate-950/[0.04] rounded-[2.5rem] py-12 px-6 md:py-16 md:px-10 md:-mx-10 relative">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
                       <div className="flex gap-4 md:gap-6">
-                        <CompanyLogo id={exp.id} name={exp.company} src={persistedLogos[exp.id] || exp.logo} onClick={() => triggerLogoUpload(exp.id)} />
+                        <CompanyLogo name={exp.company} src={exp.logo} />
                         <div>
                           <h3 className="text-lg md:text-xl lg:text-2xl font-black text-slate-800 leading-tight tracking-tight">{exp.title}</h3>
                           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] md:text-[11px] font-black text-slate-400 uppercase tracking-widest mt-3 md:mt-5">
@@ -227,7 +180,7 @@ const App: React.FC = () => {
                     {data.education.map((edu) => (
                       <div key={edu.id} className="group flex flex-col gap-3 md:gap-4">
                          <div className="flex items-center gap-4">
-                            <CompanyLogo id={edu.id} name={edu.institution} src={persistedLogos[edu.id] || edu.logo} onClick={() => triggerLogoUpload(edu.id)} />
+                            <CompanyLogo name={edu.institution} src={edu.logo} />
                             <div>
                                <h4 className="text-[11px] md:text-[12px] font-bold uppercase text-slate-900 leading-tight">{edu.degree}</h4>
                                <p className="text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">{edu.institution}</p>

@@ -8,7 +8,7 @@ import { CVData } from './types';
 export const INITIAL_CV_DATA: CVData = {
   name: "VICTOR LAFFORGUE",
   title: "Chief Marketing Officer specializing in Web3 and AI",
-  summary: "Building and scaling technology ventures in Web3 and AI ecosystems from early-stage conception to market adoption. Deep expertise in production-grade AI systems, on-chain mechanics, go-to-market strategy, community building, and cross-functional leadership. Multi-lingual background with experience launching products across global markets.",
+  summary: "Building and scaling AI and blockchain protocols from early-stage conception to market adoption. Deep expertise in developer marketing, technical storytelling, protocol positioning, on-chain mechanics, and go-to-market strategy. Multi-lingual background with experience positioning complex technical products across global markets.",
   email: "vic.lafforgue@gmail.com",
   phone: "+33 6 15 09 29 19",
   location: "Remote",
@@ -25,11 +25,11 @@ export const INITIAL_CV_DATA: CVData = {
       logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/1758019329968.jpeg",
       responsibilities: [
         "**STRATEGY**: Led **go-to-market, growth strategy, and market positioning** for AI + Web3 infrastructure from early conception to public launch",
-        "**MARKETING**: Defined and executed **marketing, narrative, and ecosystem strategy** across product, community, and token launch phases",
+        "**MARKETING**: Defined and executed **protocol positioning, developer narrative, and ecosystem strategy** across product, community, and token launch phases",
         "**KOL**: Designed and coordinated **KOL & influencer campaigns**, managing budget allocation, performance tracking, and ROI across multiple channels",
         "**COMMUNITY**: Built and executed **community growth strategies** (Telegram, Twitter/X, Discord), including ambassador programs and early contributor incentives",
-        "**PRODUCT**: Collaborated closely with technical founders on **product strategy, feature prioritization, and PMF exploration**",
-        "**TOKENOMICS**: Contributed to **tokenomics design and on-chain mechanics**, aligning incentive structures with long-term ecosystem sustainability",
+        "**PRODUCT**: **Led product strategy, feature prioritization, and PMF exploration** alongside technical founders, translating complex AI + Web3 concepts for target audiences",
+        "**PROTOCOL DESIGN**: **Architected complete tokenomics model and on-chain mechanics**, producing protocol documentation and aligning incentive structures with long-term ecosystem sustainability",
         "**MARKET MAKING**: Coordinated **market-making strategy, liquidity considerations**, and exchange-facing narratives in collaboration with partners",
         "**LAUNCH OPS**: Oversaw **launch operations**: positioning, messaging, rollout sequencing, and post-launch iteration",
         "**LEADERSHIP**: Actively participated in **pivot exploration and strategic reassessment** as the CUA and agent ecosystem evolved rapidly"
@@ -60,7 +60,7 @@ export const INITIAL_CV_DATA: CVData = {
       description: "Layer-1 blockchain infrastructure focused on scalability, security & energy efficiency",
       logo: "https://raw.githubusercontent.com/Victor777777/cvp/cb00fd0d6ce5651976ad93e68d6be9cfd82e082c/archethic_technologies_logo.jpeg",
       responsibilities: [
-        "**FUNDRAISING**: Raised over **$3M** through strategic investor relations and comprehensive pitch execution with cash flow projections",
+        "**FUNDRAISING**: Raised over **$3M** through strategic investor relations and comprehensive pitch execution",
         "**PARTNERSHIPS**: Identified and secured **15+ key partnerships** driving ecosystem growth and market adoption",
         "**REVENUE**: Acquired B2C & B2B clients generating **$2M+ in revenue** through strategic business development",
         "**TRADING**: Ran **10+ trading pairs** generating **$1.3M profits** over 3 years through strategic market making",
@@ -68,12 +68,12 @@ export const INITIAL_CV_DATA: CVData = {
         "**TEAM**: Managed **5+ people** to ensure business & marketing strategy execution across multiple workstreams",
         "**PRODUCT**: Coordinated launch campaigns for **Bridge & DEX products**, including revenue model development",
         "**COMMUNITY**: Grew community from **0 to 40k+ followers** across TG, Discord, Twitter through strategic engagement",
-        "**LEGAL**: Successfully set up foundation in Switzerland; created companies in **6 jurisdictions** (Luxembourg, Portugal, France, Dubai & Hong Kong)",
-        "**CONTENT**: Created comprehensive content for Medium & blog, reaching **10k+ subscribers**",
-        "**MARKETING**: Built **data-driven strategies** leveraging market narratives to achieve **clear ROI tracking**",
+        "**LEGAL**: Successfully set up foundation in Switzerland; created companies in **6 jurisdictions**",
+        "**CONTENT**: Created **technical content, protocol explainers, and developer guides** reaching **10k+ subscribers**",
+        "**MARKETING**: Built data-driven **developer adoption strategies and protocol positioning** with **clear ROI tracking**",
         "**ANALYTICS**: Set up & analyzed KPIs using tools like **Databox APIs** for data-driven decision making",
         "**COMPLIANCE**: Enusred full compliance with local and international regulations across multiple jurisdictions",
-        "**WEB**: Designed content & design of company website through two major iterations",
+        "**WEB**: Created content & design of multiples websites",
         "**KOL**: Budgeted, managed & measured Key Opinion Leaders campaigns with clear ROI tracking",
         "**PRODUCT**: Created and maintained comprehensive company product roadmap aligned with market demands",
         "**AMBASSADORS**: Designed ambassador program to foster community engagement and organic growth"
@@ -120,15 +120,15 @@ export const INITIAL_CV_DATA: CVData = {
   ],
   skills: [
     "GTM Strategy", 
+    "Protocol Positioning",
     "Cross-functional Leadership", 
     "Fundraising & BD", 
-    "On-chain Mechanics", 
-    "Web3 Marketing", 
+    "Developer Marketing",
+    "Technical Content",
     "Community Building", 
     "KOL Campaigns", 
     "Marketing & Growth", 
-    "AI Content Creation", 
-    "On-chain Activity"
+    "On-chain Mechanics"
   ],
   technicalSkills: [
     "AI Content Generation", "AI Video Generation", "AI Voice Generation", "AI Image Generation", 
